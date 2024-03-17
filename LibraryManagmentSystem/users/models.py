@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
         ('admin', 'Admin'),
         ('superadmin', 'Super Admin'),
     )
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES , default = 'student')
 
     def __str__(self):
         return self.title
