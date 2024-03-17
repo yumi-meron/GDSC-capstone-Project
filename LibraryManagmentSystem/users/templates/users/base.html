@@ -1,0 +1,24 @@
+{% load static}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            body {
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </header>
+    </body>
+</html>
