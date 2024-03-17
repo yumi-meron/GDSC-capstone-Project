@@ -1,5 +1,28 @@
 {% load crispy_forms_tags %}
 {% block content %}
+    <head>
+        <style>
+            body {
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            button {
+                padding: 10;
+                margin-left: 20px;
+                display: inline;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+            fieldset {
+                margin-top: 60px;
+                border-radius: 5px;
+                margin: 20px;
+            }
+        </style>
+    </head>
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}

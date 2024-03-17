@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import UserRegisterForm
+ 
 
-def home(request):
-    return render(request, 'home.html')
-
-    
 def register(request):
     if request.method == 'POST':
-        form = UserRegisterForm()
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Account Created!')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {"form": form})
